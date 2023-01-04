@@ -1,0 +1,29 @@
+<html style='background-color: black'>
+  <div id="my_bouncing_box" style= "background-color: blue; border-radius: 3px; position: absolute; left: 0px; top: 0px; min-width: 100px; min-height: 100px; text-align: center; font-weight: bold; color: #999;" >maxalbay_b</div>
+  <script type="text/javascript">
+        let ball = document.getElementById('my_bouncing_box');
+        var xPosition = 1;
+        let yPosition = 1;
+        var xSpeed = 5;
+        let ySpeed = 5;
+
+        function update(){
+            ball.style.left = xPosition + 'px'
+            ball.style.top = yPosition + 'px'
+            }
+        setInterval(()=>{
+            if(xPosition + ball.clientWidth >= window.innerWidth || xPosition <= 0){
+                xSpeed = -xSpeed
+            }
+            if(yPosition + ball.clientHeight >= window.innerHeight || yPosition <= 0){
+                ySpeed = -ySpeed
+            }
+        xPosition += xSpeed;
+        yPosition += ySpeed;
+
+      update();
+        },3000/60)
+
+
+   </script>
+</html>
